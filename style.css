@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background-color: #f7f7eb;
+}
+nav{
+  background-color: #7b4da8 !important;
+}
+.navbar{
+  padding: .8rem;
+  background-color: #081414;
+}
+.navbar-light .navbar-brand {
+    color: #093538;
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(224, 255, 251,.5);
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(224, 255, 251,.9);
+}
+.sldes{
+  background-image: linear-gradient(rgba(158, 116, 116, 0.527),rgba(170, 170, 170, 0.527));
+}
+.navbar-nav li{
+  padding-right: 20px;
+}
+.navdes{
+  background-color: #7b4da8 !important;
+  
+}
+.nav-link{
+  font-size: 1.1em !important;
+}
+.navbar-brand{
+  font-size: 50px;
+  font-family: 'Pacifico', sans-serif;
+}
+.capt{
+  font-size: 75px;
+}
+.carousel-inner img{
+  width:100%;
+  height:100%;
+}
+.carousel-caption{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  
+
+}
+.go{
+  position: relative;
+    height: 85vh;
+    background-image: linear-gradient( to right bottom,rgba(111, 131, 245, 0.81),rgba(16, 45, 139, 0.616)), url(img/camp2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.go-text{
+  position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+}
+.gobtn:link,
+.gobtn:visited{
+  
+  position:relative;
+   border-radius: 50%;
+    text-decoration: none;
+    padding: 150px 80px ;
+    text-transform: uppercase;
+    font-size: 50px;
+    display:inline-block;
+    transition: all 0.2s;
+    background-color: rgba(12, 69, 73, 0.801);
+    color: #fff;
+    
+}
+.gobtn:hover{
+    transform: translateY(-17px);
+    background-color: rgba(20, 104, 110, 0.801);
+    box-shadow: 0 20px 30px #080220;
+    
+}
+.pad3{
+  padding-bottom: 30px;
+}
+.display-4{
+  padding-top:50px;
+  padding-bottom: 30px;
+}
+.gobtn:active{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px #080220;
+    
+}
+.carousel-item {
+  height: 500px;
+}
+#myBtns {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #7b4da8; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtns:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+footer{
+  background-color: #3f3f3f;
+  color: #dfdfdf;
+}
+.fh{
+  color: #dfdfdf;
+}
+.icon-b{
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+  }
+@media (max-width: 768px) {
+  .capt{
+    font-size: 45px;
+  }
+}
+@media (max-width: 576px) {
+  .capt{
+    font-size: 45px;
+  }
+  
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+

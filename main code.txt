@@ -1,0 +1,40 @@
+SELECT DISTINCT host.email, username, host.dest, host.time, host.date,gender
+FROM host, main, route1, route2, route3, route4, route5, route6, special,customer_info
+WHERE 
+ (route1.dest = host.dest
+           AND route1.SNo >= (SELECT route1.SNo
+                            FROM route1, main
+                            WHERE route1.dest = main.dest)
+ OR  route2.dest = host.dest
+           AND route2.SNo >= (SELECT route2.SNo
+                            FROM route2, main
+                            WHERE route2.dest = main.dest)
+ OR  route3.dest = host.dest
+           AND route3.SNo >= (SELECT route3.SNo
+                            FROM route3, main
+                            WHERE route3.dest = main.dest)
+ OR  route4.dest = host.dest
+           AND route4.SNo >= (SELECT route4.SNo
+                            FROM route4, main
+                            WHERE route4.dest = main.dest)
+ OR  route5.dest = host.dest
+           AND route5.SNo >= (SELECT route5.SNo
+                            FROM route5, main
+                            WHERE route5.dest = main.dest)
+ OR  route6.dest = host.dest
+           AND route6.SNo >= (SELECT route6.SNo
+                            FROM route6, main
+                            WHERE route6.dest = main.dest)
+ OR  L1 = main.dest
+         AND (L2  = host.dest OR L3 = host.dest))
+         
+ AND
+ ((main.time-host.time) BETWEEN -3000 AND 3000)
+ AND 
+ (main.date = host.date)
+
+#####################################
+ AND
+ (email != '$user')
+ AND
+ (host.email=customer_info.email)
